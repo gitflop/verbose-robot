@@ -3,6 +3,7 @@ package fx.aal.arduapp;
 import java.io.IOException;
 
 import fx.aal.arduapp.model.User;
+import fx.aal.arduapp.view.patientOverviewController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -57,7 +58,7 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showPersonOverview();
+        showPatientOverview();
     }
 
     /**
@@ -82,20 +83,27 @@ public class MainApp extends Application {
     /**
      * Shows the person overview inside the root layout.
      */
-    public void showPersonOverview() {
+    /**
+     * Shows the person overview inside the root layout.
+     */
+    public void showPatientOverview() {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/patientOverview.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+            AnchorPane patientOverview = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(personOverview);
+            rootLayout.setCenter(patientOverview);
+
+            // Give the controller access to the main app.
+            patientOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     /**
      * Returns the main stage.
      * @return
