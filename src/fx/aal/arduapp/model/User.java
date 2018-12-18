@@ -107,9 +107,11 @@ public class User {
         return ciudad;
     }
 
+    
     public LocalDate getBirthday() {
         return cumple.get();
     }
+    
 
     public void setBirthday(LocalDate birthday) {
         this.cumple.set(birthday);
