@@ -44,8 +44,8 @@
       </GridPane>
       <HBox layoutX="383.0" layoutY="330.0" AnchorPane.bottomAnchor="44.66666666666667" AnchorPane.rightAnchor="50.33333333333334">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="OK" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Cancel" />
+            <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="25.0" prefWidth="83.0" text="OK" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="25.0" prefWidth="83.0" text="Cancel" />
          </children>
       </HBox>
       <TextField layoutX="177.0" layoutY="-102.0" />

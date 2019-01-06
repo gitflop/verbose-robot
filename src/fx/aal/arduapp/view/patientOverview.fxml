@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.aal.arduapp.view.patientOverviewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.aal.arduapp.view.PatientOverviewController">
    <children>
       <SplitPane dividerPositions="0.4816053511705686" layoutX="7.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -88,8 +88,6 @@
                         <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      </children>
                   </GridPane>
-                  <Button layoutX="9.0" layoutY="346.0" mnemonicParsing="false" onAction="#handleOpen" text="ver archivo" />
-                  <Button layoutX="83.0" layoutY="346.0" mnemonicParsing="false" onAction="#handleSaveAs" text="save as" />
                </children>
             </AnchorPane>
          </items>

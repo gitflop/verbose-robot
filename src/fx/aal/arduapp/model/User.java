@@ -1,123 +1,168 @@
 package fx.aal.arduapp.model;
 
-import java.time.LocalDate;
-
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
  * Clase modelo Usuario
  *
- *
  */
 public class User {
 
-    private final StringProperty nombre;
-    private final StringProperty apellidos;
-    private final StringProperty calle;
-    private final IntegerProperty codigoPostal;
-    private final StringProperty ciudad;
-    private final ObjectProperty<LocalDate> cumple;
+	private final StringProperty userType;
+	private final StringProperty nombre;
+	private final StringProperty apellidos;
+	private final StringProperty calle;
+	private final IntegerProperty codigoPostal;
+	private final StringProperty ciudad;
+	private final IntegerProperty ID;
+	private final StringProperty userName;
+	private final StringProperty email;
+	// private DataSnap[] DataSnaps = new DataSnap[10];
+	// private final ObjectProperty<LocalDate> cumple;
 
-    /**
-     * Default constructor.
-     */
-    public User() {
-        this(null, null);
-    }
+	/**
+	 * Constructor por defecto.
+	 */
+	public User() {
+		this(null, null);
+	}
 
-    /**
-     * Constructor with some initial data.
-     *
-     * @param firstName
-     * @param lastName
-     */
-    public User(String firstName, String lastName) {
-        this.nombre = new SimpleStringProperty(firstName);
-        this.apellidos = new SimpleStringProperty(lastName);
+	/**
+	 * Constructor con datos algunos datos iniciales
+	 *
+	 * @param nombre
+	 * @param apellidos
+	 */
+	public User(String nombre, String apellidos) {
 
-        // Some initial dummy data, just for convenient testing.
-        this.calle = new SimpleStringProperty("some street");
-        this.codigoPostal = new SimpleIntegerProperty(1234);
-        this.ciudad = new SimpleStringProperty("some city");
-        this.cumple = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
-    }
+		this.nombre = new SimpleStringProperty(nombre);
+		this.apellidos = new SimpleStringProperty(apellidos);
+		this.userName = new SimpleStringProperty("username");
+		this.calle = new SimpleStringProperty("some street");
+		this.codigoPostal = new SimpleIntegerProperty(1234);
+		this.ciudad = new SimpleStringProperty("some city");
+		this.ID = new SimpleIntegerProperty(000);
+		this.userType = new SimpleStringProperty("noValue");
+		this.email = new SimpleStringProperty("noEmail@gmail.com");
+		
+	}
 
-    public String getFirstName() {
-        return nombre.get();
-    }
+	public String getNombre() {
+		return nombre.get();
+	}
 
-    public void setFirstName(String firstName) {
-        this.nombre.set(firstName);
-    }
+	public void setNombre(String firstName) {
+		this.nombre.set(firstName);
+	}
 
-    public StringProperty firstNameProperty() {
-        return nombre;
-    }
+	public StringProperty nombreProperty() {
+		return nombre;
+	}
 
-    public String getLastName() {
-        return apellidos.get();
-    }
+	public String getApellidos() {
+		return apellidos.get();
+	}
 
-    public void setLastName(String lastName) {
-        this.apellidos.set(lastName);
-    }
+	public void setApellidos(String lastName) {
+		this.apellidos.set(lastName);
+	}
 
-    public StringProperty lastNameProperty() {
-        return apellidos;
-    }
+	public StringProperty appellidosProperty() {
+		return apellidos;
+	}
 
-    public String getStreet() {
-        return calle.get();
-    }
+	public String getCalle() {
+		return calle.get();
+	}
 
-    public void setStreet(String street) {
-        this.calle.set(street);
-    }
+	public void setCalle(String street) {
+		this.calle.set(street);
+	}
 
-    public StringProperty streetProperty() {
-        return calle;
-    }
+	public StringProperty calleProperty() {
+		return calle;
+	}
 
-    public int getPostalCode() {
-        return codigoPostal.get();
-    }
+	public int getCodigoPostal() {
+		return codigoPostal.get();
+	}
 
-    public void setPostalCode(int postalCode) {
-        this.codigoPostal.set(postalCode);
-    }
+	public void setPostalCode(int postalCode) {
+		this.codigoPostal.set(postalCode);
+	}
 
-    public IntegerProperty postalCodeProperty() {
-        return codigoPostal;
-    }
+	public IntegerProperty postalCodeProperty() {
+		return codigoPostal;
+	}
 
-    public String getCity() {
-        return ciudad.get();
-    }
+	public String getCiudad() {
+		return ciudad.get();
+	}
 
-    public void setCity(String city) {
-        this.ciudad.set(city);
-    }
+	public void setCiudad(String city) {
+		this.ciudad.set(city);
+	}
 
-    public StringProperty cityProperty() {
-        return ciudad;
-    }
+	public StringProperty ciudadProperty() {
+		return ciudad;
+	}
 
-    
-    public LocalDate getBirthday() {
-        return cumple.get();
-    }
-    
+	// public DataSnap[] getDataSnaps() {
+	// return DataSnaps;
+	// }
+	//
+	// public void setDataSnaps(DataSnap[] dataSnaps) {
+	// DataSnaps = dataSnaps;
+	// }
+	public int getID() {
+		return ID.get();
+	}
 
-    public void setBirthday(LocalDate birthday) {
-        this.cumple.set(birthday);
-    }
+	public void setID(int id) {
+		this.ID.set(id);
+	}
 
-    public ObjectProperty<LocalDate> birthdayProperty() {
-        return cumple;
-    }
+	public IntegerProperty IDProperty() {
+		return ID;
+	}
+
+	public StringProperty userTypeProperty() {
+		return userType;
+	}
+
+	public String getUserType() {
+		return userType.get();
+	}
+
+	public void setUserType(String type) {
+		this.userType.set(type);
+	}
+
+	public StringProperty userNameProperty() {
+		return userName;
+	}
+
+	public String getUserName() {
+		return userName.get();
+	}
+
+	public void setUserName(String _userName) {
+		this.userName.set(_userName);
+	}
+
+	public StringProperty emailProperty() {
+		return email;
+	}
+
+	public String getEmail() {
+		return email.get();
+	}
+
+	public void setEmail(String _email) {
+		this.email.set(_email);
+	}
+
 }

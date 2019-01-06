@@ -1,6 +1,7 @@
 package fx.aal.arduapp.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -10,7 +11,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Helper class to wrap a list of Users. This is used for saving the
  * list of Users to XML.
  *
- * @author Marco Jakob
  */
 @XmlRootElement(name = "Users")
 public class PatientListWrapper {
@@ -22,7 +22,16 @@ public class PatientListWrapper {
         return Users;
     }
 
-    public void setUsers(List<User> Users) {
-        this.Users = Users;
+    public void setUsers(List<User> users) {
+        this.Users = users;
     }
+
+    public void setUser(User user){
+    	if(this.Users == null ){
+
+    	}else{
+    	this.Users.add(user);
+    	}
+   }
+
 }
